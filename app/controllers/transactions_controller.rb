@@ -25,11 +25,13 @@ class TransactionsController < ApplicationController
   # POST /transactions or /transactions.json
   def create
     @transaction = Transaction.new(transaction_params)
-    @transaction.user_id = current_user
+    @transaction.user_id = current_user.id
+    @transaction.category_id = params[:category_id]
 
     respond_to do |format|
       if @transaction.save
-        format.html { redirect_to category_transactions_upath, notice: "Transaction was successfully created." }
+        puts plain: @transaction
+        format.html { redirect_to category_transactions_path, notice: "Transaction was successfully created." }
         format.json { render :show, status: :created, location: @transaction }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -42,7 +44,7 @@ class TransactionsController < ApplicationController
   def update
     respond_to do |format|
       if @transaction.update(transaction_params)
-        format.html { redirect_to transaction_url(@transaction), notice: "Transaction was successfully updated." }
+        format.html { redirect_to category_transactions_path, notice: "Transaction was successfully updated." }
         format.json { render :show, status: :ok, location: @transaction }
       else
         format.html { render :edit, status: :unprocessable_entity }

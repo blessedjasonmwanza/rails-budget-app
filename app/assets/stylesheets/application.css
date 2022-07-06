@@ -52,10 +52,10 @@ header * {
   margin: 0;
 }
 
-header .btn{
+.btn{
   display: inline-flex;
   padding: 0px 10px;
-  /* border: 1px solid red; */
+  border:none;
   text-decoration: none;
   color: #434b54;
   background: #fff;
