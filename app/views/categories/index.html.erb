@@ -1,11 +1,12 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Categories</h1>
-
-<div id="categories">
+<header>
+<h1>Budgets</h1>
+</header>
+<main>
   <% @categories.each do |category| %>
-    <%= link_to render(category), category, class:'category_wrapper'%>
+    <%= link_to render(category), category_transactions_path(category), class:'category_wrapper'%>
   <% end %>
-</div>
+</main>
 
+<footer>
 <%= link_to "New category", new_category_path %>
+</footer>

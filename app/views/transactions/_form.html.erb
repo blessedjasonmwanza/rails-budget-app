@@ -1,4 +1,4 @@
-<%= form_with(model: transaction) do |form| %>
+<%= form_for [@category, transaction] do |form| %>
   <% if transaction.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
@@ -10,7 +10,12 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="m-3">
+    <%= form.text_field :name, autofocus: true, placeholder: "Item", class: "form-control", required: true %>
+  </div>
+  <div class="m-3">
+    <%= form.number_field :amount, autofocus: true, placeholder: "Amount", class: "form-control", required: true %>
+  </div>
   <div>
     <%= form.submit %>
   </div>

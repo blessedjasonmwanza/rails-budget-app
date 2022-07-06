@@ -1,10 +1,18 @@
-<p style="color: green"><%= notice %></p>
+<header>
+  <%= link_to "Back", categories_path, class: "btn"  %>
+  <h1>Budgets</h1>
+  <% if user_signed_in? %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn bg-danger" %>
+  <% end %>
+</header>
 
 <%= render @category %>
 
-<div>
-  <%= link_to "Edit this category", edit_category_path(@category) %> |
-  <%= link_to "Back to categories", categories_path %>
-
-  <%= button_to "Destroy this category", @category, method: :delete %>
+<div class="category_actions">
+  <%= link_to "Edit", edit_category_path(@category) %>
+  <%= button_to "Destroy category", @category, method: :delete %>
 </div>
+
+<footer>
+  <%= link_to "Add Transaction", new_category_transaction %>
+</footer>

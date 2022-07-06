@@ -3,7 +3,7 @@
   <div class="details">
     <span class="top_data">
       <h2 class="name" title="Category name"><%= category.name%></h2>
-      <span class="amount" title="Total transactions"><%= category.total_amount%></span>
+      <span class="total" title="Total transactions"><small>$</small><%= category.total_amount%></span>
     </span>
     <time data="<%= category.created_at %>"><%= category.created_at.strftime("%e %B %Y") %></time>
   </div>
