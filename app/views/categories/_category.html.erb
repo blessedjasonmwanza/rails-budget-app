@@ -1,2 +1,10 @@
-<div id="<%= dom_id category %>">
-</div>
+<section id="<%= dom_id category %>" class="category_card">
+  <%= image_tag category.icon, class: 'icon' %>
+  <div class="details">
+    <span class="top_data">
+      <h2 class="name" title="Category name"><%= category.name%></h2>
+      <span class="amount" title="Total transactions"><%= category.total_amount%></span>
+    </span>
+    <time data="<%= category.created_at %>"><%= category.created_at.strftime("%e %B %Y") %></time>
+  </div>
+</section>

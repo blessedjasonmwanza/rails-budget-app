@@ -4,10 +4,7 @@
 
 <div id="categories">
   <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
+    <%= link_to render(category), category, class:'category_wrapper'%>
   <% end %>
 </div>
 
