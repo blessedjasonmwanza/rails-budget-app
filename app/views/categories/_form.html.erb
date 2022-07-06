@@ -12,6 +12,12 @@
   <% end %>
 
   <div>
+    <div class="m-3">
+      <%= form.text_field :name, autofocus: true, placeholder: "Name", class: "form-control", required: true %>
+    </div>
+    <div class="m-3">
+      <%= form.file_field :icon, placeholder: "Image", class: "form-control", required: true %>
+    </div>
     <%= form.submit %>
   </div>
 <% end %>
