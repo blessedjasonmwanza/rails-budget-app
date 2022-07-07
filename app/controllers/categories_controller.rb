@@ -5,12 +5,12 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
-    @categories = Category.all
+    @categories = Category.includes(:user, :transactions).order(created_at: :desc)
   end
 
   # GET /categories/1 or /categories/1.json
   def show
-    @category = Category.find(params['id'])
+    @category = Category.includes(:user, :transactions).find(params['id'])
     redirect_to category_transactions_path(@category)
   end
 
@@ -53,7 +53,7 @@ class CategoriesController < ApplicationController
   # DELETE /categories/1 or /categories/1.json
   def destroy
     puts plain: params
-    @category = Category.find(params[:id])
+    @category = Category.includes(:user, :transaction).find(params[:id])
     @category.destroy
     flash[:notice] = 'Category and its data was successfully destroyed.'
     redirect_to root_path
@@ -63,7 +63,7 @@ class CategoriesController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_category
-    @category = Category.find(params[:id])
+    @category = Category.includes(:user, :transactions).find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
