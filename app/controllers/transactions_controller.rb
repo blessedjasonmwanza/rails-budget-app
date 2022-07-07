@@ -5,8 +5,8 @@ class TransactionsController < ApplicationController
 
   # GET /transactions or /transactions.json
   def index
-    @category = Category.find(params['category_id'])
-    @transactions = Transaction.where(category_id: params['category_id'])
+    @category = Category.includes(:user, :transactions).find(params['category_id'])
+    @transactions = Transaction.includes(:user, :categories).where(category_id: params['category_id'])
   end
 
   # GET /transactions/1 or /transactions/1.json
@@ -57,7 +57,7 @@ class TransactionsController < ApplicationController
   # DELETE /transactions/1 or /transactions/1.json
   def destroy
     # puts plain: params
-    @transaction = Transaction.find(params[:id])
+    @transaction = Transaction.includes.call(:user, :categories).find(params[:id])
     @transaction.destroy
     flash[:notice] = 'Transaction was successfully destroyed.'
     redirect_to category_transactions_path
@@ -67,7 +67,7 @@ class TransactionsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_transaction
-    @transaction = Transaction.find(params[:id])
+    @transaction = Transaction.includes(:user, :categories).find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
