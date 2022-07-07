@@ -6,8 +6,14 @@
       <span class="total" title="Total transactions"><small></small><%= number_to_currency(category.total_amount)%></span>
     </span>
     <span class="bottom_data">
-    <time data="<%= category.created_at %>"><%= category.created_at.strftime("%e %B %Y") %></time>
-     <%= button_to 'Detele + Data', category_url(id: category.id), method: :delete,  data: {turbo: false}, class: 'btn' %>
+      <time data="<%= category.created_at %>"><%= category.created_at.strftime("%e %B %Y") %></time>
+      <% if can? :destroy, category %>
+          <% if request.path != '/' %>
+            <%= button_to 'Detele + Data', category_url(id: category.id), method: :delete,  data: {turbo: false}, class: 'btn' %>
+          <%end%>
+        <% else %>
+        <span></span>
+      <% end %>
     </span>
   </div>
 </section>
