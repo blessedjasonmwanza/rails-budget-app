@@ -1,5 +1,6 @@
 <header>
 <h1>Budgets</h1>
+<%= button_to "Logout", destroy_user_session_path, method: :delete, data: {turbo: false}, class: "btn bg-danger"  %>
 </header>
 <main>
   <% @categories.each do |category| %>

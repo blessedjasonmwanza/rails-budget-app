@@ -165,3 +165,65 @@ footer a{
   font-weight: 500;
   font-size: 13px;
 }
+
+.new_transaction,
+.new_category {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+.new_transaction .input-fields,
+.new_category .input-fields{
+  width: 100%;
+}
+
+.input-wrapper {
+  width: 96%;
+  /* border: 1px solid red; */
+  flex-direction: column;
+  display: flex;
+  margin: 0 auto;
+  padding: 5px;
+}
+.input-wrapper select,
+.new_transaction .input-fields input,
+.new_category .input-fields input {
+  display: flex;
+  height: 30px;
+  padding: 5px;
+  border-radius: 4px;
+  width: 100%;
+  margin: 10px auto;
+  border: 1px solid #434b5475;
+  box-shadow: 0px 0px 18px #3778c283;
+  outline-color: #3778c2;
+  color: #434b5475;
+  background: #fff;
+}
+.new_transaction .input-fields input::placeholder,
+.new_category .input-fields input::placeholder {
+  font-size: 13px;
+  font-family: 'Proxima Nova Light';
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.new_category .actions,
+.new_transaction .actions {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  /* border: 1px solid green; */
+}
+.actions input {
+  margin: 0 auto;
+  background: #3778c2;
+  color: #fff;
+  cursor: pointer;
+  transition: .6s;
+}
+
+.actions input:hover{
+  background: #5fb523;
+}

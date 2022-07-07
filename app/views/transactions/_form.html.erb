@@ -10,13 +10,21 @@
       </ul>
     </div>
   <% end %>
-  <div class="m-3">
-    <%= form.text_field :name, autofocus: true, placeholder: "Item", class: "form-control", required: true %>
+  <div class='input-fields'>
+    <div class="input-wrapper">
+      <%= form.label "Choose Category" %>
+      <%= form.collection_select(:category_id, Category.all, :id, :name, { :prompt => 'Select a Category', :selected => @category.id }, { class: 'form-control ' }) %>
+    </div>
+    <div class="input-wrapper">
+      <%= form.label "Product" %>
+      <%= form.text_field :name, autofocus: true, placeholder: "Item name", class: "form-control", required: true %>
+    </div>
+    <div class="input-wrapper">
+      <%= form.label "Amount" %>
+      <%= form.number_field :amount, autofocus: true, placeholder: "Amount", class: "form-control", required: true %>
+    </div>
   </div>
-  <div class="m-3">
-    <%= form.number_field :amount, autofocus: true, placeholder: "Amount", class: "form-control", required: true %>
-  </div>
-  <div>
-    <%= form.submit %>
+  <div class='actions'>
+    <%= form.submit class: "btn" %>
   </div>
 <% end %>
