@@ -3,8 +3,11 @@
   <div class="details">
     <span class="top_data">
       <h2 class="name" title="Category name"><%= category.name%></h2>
-      <span class="total" title="Total transactions"><small>$</small><%= category.total_amount%></span>
+      <span class="total" title="Total transactions"><small></small><%= number_to_currency(category.total_amount)%></span>
     </span>
+    <span class="bottom_data">
     <time data="<%= category.created_at %>"><%= category.created_at.strftime("%e %B %Y") %></time>
+     <%= button_to 'Detele + Data', category_url(id: category.id), method: :delete,  data: {turbo: false}, class: 'btn' %>
+    </span>
   </div>
 </section>

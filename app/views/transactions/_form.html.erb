@@ -13,7 +13,7 @@
   <div class='input-fields'>
     <div class="input-wrapper">
       <%= form.label "Choose Category" %>
-      <%= form.collection_select(:category_id, Category.all, :id, :name, { :prompt => 'Select a Category', :selected => @category.id }, { class: 'form-control ' }) %>
+      <%= form.collection_select(:category_id, Category.all, :id, :name, { :prompt => 'Select a Category', :selected => @category.id }, { class: 'form-control ', required: true   })%>
     </div>
     <div class="input-wrapper">
       <%= form.label "Product" %>

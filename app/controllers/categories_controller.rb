@@ -52,12 +52,11 @@ class CategoriesController < ApplicationController
 
   # DELETE /categories/1 or /categories/1.json
   def destroy
+    puts plain: params
+    @category = Category.find(params[:id])
     @category.destroy
-
-    respond_to do |format|
-      format.html { redirect_to categories_url, notice: "Category was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    flash[:notice] = 'Category and its data was successfully destroyed.'
+    redirect_to root_path
   end
 
   private

@@ -24,8 +24,6 @@ class TransactionsController < ApplicationController
 
   # POST /transactions or /transactions.json
   def create
-    # puts plain: transaction_params
-    # puts plain: 
     @transaction = Transaction.new(transaction_params)
     @transaction.user_id = current_user.id
 
@@ -56,12 +54,11 @@ class TransactionsController < ApplicationController
 
   # DELETE /transactions/1 or /transactions/1.json
   def destroy
+    # puts plain: params
+    @transaction = Transaction.find(params[:id])
     @transaction.destroy
-
-    respond_to do |format|
-      format.html { redirect_to transactions_url, notice: "Transaction was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    flash[:notice] = 'Transaction was successfully destroyed.'
+    redirect_to category_transactions_path
   end
 
   private
