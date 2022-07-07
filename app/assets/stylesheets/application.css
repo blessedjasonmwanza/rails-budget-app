@@ -14,11 +14,10 @@
  *= require_self
  */
 
- :root{
-   --header-height: 55px;
-   --footer-height:45px;
- }
-
+:root {
+  --header-height: 55px;
+  --footer-height: 45px;
+}
 
 @font-face {
   font-family: 'Proxima Nova Light';
@@ -30,13 +29,14 @@
   margin: 0;
 }
 
-.splash{
+.splash {
   display: flex;
   flex-direction: column;
   width: 100%;
   justify-content: center;
 }
-.splash img{
+
+.splash img {
   display: inline-flex;
   width: 500px;
   margin: 0 auto;
@@ -44,20 +44,23 @@
   margin-top: calc(var(--header-height) + 10vh);
   margin-bottom: 5vh;
 }
-.splash .actions{
+
+.splash .actions {
   display: inline-flex;
   justify-content: center;
   width: 300px;
   margin: 0 auto;
   text-align: center;
 }
+
 body {
   color: #434b54;
-  font-family: 'Proxima Nova Light';
+  font-family: 'Proxima Nova Light', 'Lato', sans-serif;
   padding: 0;
   margin: 0;
 }
-header{
+
+header {
   display: flex;
   flex-flow: row;
   justify-content: space-between;
@@ -73,10 +76,10 @@ header * {
   margin: 0;
 }
 
-.btn{
+.btn {
   display: inline-flex;
-  padding: 0px 10px;
-  border:none;
+  padding: 0 10px;
+  border: none;
   text-decoration: none;
   color: #434b54;
   background: #fff;
@@ -85,27 +88,27 @@ header * {
   height: 30px;
   border-radius: 4px;
   margin: 0 5px;
-  box-shadow: 0px 3px 6px #434b54;
+  box-shadow: 0 3px 6px #434b54;
   font-size: 13px;
   cursor: pointer;
 }
-.bg-danger{
+
+.bg-danger {
   background: #ff4500 !important;
   color: #fff !important;
 }
+
 main {
   display: flex;
   position: fixed;
   flex-flow: column;
-  position: fixed;
   top: calc(var(--header-height) + 15px);
   bottom: var(--footer-height);
   left: 0;
-  right: 0
+  right: 0;
 }
 
-
-footer{
+footer {
   display: flex;
   position: fixed;
   flex-flow: row;
@@ -119,7 +122,7 @@ footer{
   align-content: center;
 }
 
-footer a{
+footer a {
   color: #fff;
   font-weight: 600;
   text-decoration: none;
@@ -137,7 +140,7 @@ footer a{
   width: calc(100% - 16px);
   flex-flow: row wrap;
   align-items: center;
-  box-shadow: 0px 3px 16px #ccc;
+  box-shadow: 0 3px 16px #ccc;
   padding: 8px;
   margin-bottom: 8px;
   border-radius: 3px;
@@ -178,25 +181,27 @@ footer a{
 }
 
 .category_card .details .top_data .total {
-  font-weight:900;
+  font-weight: 900;
   font-size: 18px;
   color: #434b54;
 }
+
 .category_card .details .bottom_data {
   display: flex;
   justify-content: space-between;
   align-content: center;
-  align-content: center;
   margin-bottom: -5px;
 }
-.category_card .details .bottom_data button.btn{
+
+.category_card .details .bottom_data button.btn {
   padding: 2px 5px;
-  height: fit-content;
+  height: min-content;
   background: #fff !important;
   color: #ff4500 !important;
-  border-radius: 2px ;
+  border-radius: 2px;
 }
-.category_card .details time{
+
+.category_card .details time {
   display: inline-flex;
   align-content: center;
   align-items: center;
@@ -211,24 +216,29 @@ footer a{
   flex-direction: column;
   width: 100%;
 }
-.auth-form .field,
-.new_transaction .input-fields,
-.new_category .input-fields{
-  width: 100%;
+
+.auth-form .btn {
+  margin: 20px;
 }
-.auth-form,
-.input-wrapper {
-  width: 96%;
-  /* border: 1px solid red; */
-  flex-direction: column;
-  display: flex;
+
+.splash .btn,
+.actions input {
   margin: 0 auto;
-  padding: 5px;
+  background: #3778c2;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.6s;
 }
-.auth-form .field input:not([type="checkbox"]),
+
+.splash .btn:hover,
+.actions input:hover {
+  background: #5fb523;
+}
+
 .input-wrapper select,
+.new_category .input-fields input,
 .new_transaction .input-fields input,
-.new_category .input-fields input {
+.auth-form .field input:not([type="checkbox"]) {
   display: flex;
   height: 30px;
   padding: 5px;
@@ -236,19 +246,38 @@ footer a{
   width: 100%;
   margin: 10px auto;
   border: 1px solid #434b5475;
-  box-shadow: 0px 0px 18px #3778c283;
+  box-shadow: 0 0 18px #3778c283;
   outline-color: #3778c2;
   color: #434b5475;
   background: #fff;
 }
-.input-wrapper select{
+
+.auth-form .field,
+.new_transaction .input-fields,
+.new_category .input-fields {
+  width: 100%;
+}
+
+.auth-form,
+.input-wrapper {
+  width: 96%;
+
+  /* border: 1px solid red; */
+  flex-direction: column;
+  display: flex;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.input-wrapper select {
   width: 101%;
 }
+
 .auth-form .field input::placeholder,
 .new_transaction .input-fields input::placeholder,
 .new_category .input-fields input::placeholder {
   font-size: 13px;
-  font-family: 'Proxima Nova Light';
+  font-family: 'Proxima Nova Light', 'Lato', sans-serif;
   font-weight: bold;
   letter-spacing: 1px;
 }
@@ -258,19 +287,6 @@ footer a{
   display: inline-flex;
   justify-content: center;
   width: 100%;
-  /* border: 1px solid green; */
-}
-.splash .btn,
-.actions input {
-  margin: 0 auto;
-  background: #3778c2;
-  color: #fff;
-  cursor: pointer;
-  transition: .6s;
-}
-.splash .btn:hover,
-.actions input:hover{
-  background: #5fb523;
 }
 
 #transaction {
@@ -278,7 +294,8 @@ footer a{
   justify-content: space-around;
   flex-flow: column;
 }
-#transactions .transaction{
+
+#transactions .transaction {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
@@ -286,24 +303,20 @@ footer a{
   padding: 5px;
 }
 
-#transactions .transaction:hover{
+#transactions .transaction:hover {
   background: #434b5413;
 }
 
 /* AUTH FORMS */
 
-.auth-form h2{
+.auth-form h2 {
   text-align: center;
 }
 
-.auth-form .actions{
+.auth-form .actions {
   display: flex;
   width: 100%;
   justify-content: center;
-}
-
-.auth-form .btn{
-  margin: 20px;
 }
 
 .auth-links {
@@ -314,13 +327,13 @@ footer a{
   gap: 5px;
 }
 
-.auth-links a{
+.auth-links a {
   color: #434b54;
   text-decoration: none;
   transition: 0.6s;
   font-size: 14px;
 }
 
-.auth-links a:hover{
+.auth-links a:hover {
   color: #3778c2;
 }

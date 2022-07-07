@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -10,11 +8,12 @@ class Ability
     can :create, Transaction
     # Define abilities for the user here. For example:
     #
-      return unless user.present?
-        can :destroy, Category, user: user
-        can :destroy, Transaction, user: user
-      # return unless user.admin?
-      # can :manage, :all
+    return unless user.present?
+
+    can :destroy, Category, user: user
+    can :destroy, Transaction, user: user
+    # return unless user.admin?
+    # can :manage, :all
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.
