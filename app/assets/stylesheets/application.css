@@ -29,6 +29,28 @@
 .notice {
   margin: 0;
 }
+
+.splash{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+.splash img{
+  display: inline-flex;
+  width: 500px;
+  margin: 0 auto;
+  max-width: 100%;
+  margin-top: calc(var(--header-height) + 10vh);
+  margin-bottom: 5vh;
+}
+.splash .actions{
+  display: inline-flex;
+  justify-content: center;
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
 body {
   color: #434b54;
   font-family: 'Proxima Nova Light';
@@ -238,6 +260,7 @@ footer a{
   width: 100%;
   /* border: 1px solid green; */
 }
+.splash .btn,
 .actions input {
   margin: 0 auto;
   background: #3778c2;
@@ -245,7 +268,7 @@ footer a{
   cursor: pointer;
   transition: .6s;
 }
-
+.splash .btn:hover,
 .actions input:hover{
   background: #5fb523;
 }
