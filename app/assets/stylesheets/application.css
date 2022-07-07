@@ -189,11 +189,12 @@ footer a{
   flex-direction: column;
   width: 100%;
 }
+.auth-form .field,
 .new_transaction .input-fields,
 .new_category .input-fields{
   width: 100%;
 }
-
+.auth-form,
 .input-wrapper {
   width: 96%;
   /* border: 1px solid red; */
@@ -202,6 +203,7 @@ footer a{
   margin: 0 auto;
   padding: 5px;
 }
+.auth-form .field input:not([type="checkbox"]),
 .input-wrapper select,
 .new_transaction .input-fields input,
 .new_category .input-fields input {
@@ -220,6 +222,7 @@ footer a{
 .input-wrapper select{
   width: 101%;
 }
+.auth-form .field input::placeholder,
 .new_transaction .input-fields input::placeholder,
 .new_category .input-fields input::placeholder {
   font-size: 13px;
@@ -262,4 +265,39 @@ footer a{
 
 #transactions .transaction:hover{
   background: #434b5413;
+}
+
+/* AUTH FORMS */
+
+.auth-form h2{
+  text-align: center;
+}
+
+.auth-form .actions{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.auth-form .btn{
+  margin: 20px;
+}
+
+.auth-links {
+  display: flex;
+  flex-flow: column;
+  width: 95%;
+  margin: 10px auto;
+  gap: 5px;
+}
+
+.auth-links a{
+  color: #434b54;
+  text-decoration: none;
+  transition: 0.6s;
+  font-size: 14px;
+}
+
+.auth-links a:hover{
+  color: #3778c2;
 }
