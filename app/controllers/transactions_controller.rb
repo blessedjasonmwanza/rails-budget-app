@@ -6,7 +6,7 @@ class TransactionsController < ApplicationController
   # GET /transactions or /transactions.json
   def index
     @category = Category.includes(:user, :transactions).find(params['category_id'])
-    @transactions = Transaction.includes(:user, :categories).where(category_id: params['category_id'])
+    @transactions = Transaction.includes(:user, :categories).where(category_id: params['category_id']).order(created_at: :desc)
   end
 
   # GET /transactions/1 or /transactions/1.json
