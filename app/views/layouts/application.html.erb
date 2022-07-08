@@ -12,9 +12,7 @@
 
   <body>
     <p class="notice" style="color: green"><%= notice %></p>
-    <% flash.each do |key, value| %>
-      <%= content_tag :div, value, class: "flash #{key}", style:"color:red" %>
-    <% end %>
+    <p class="alert" style="color: red"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
