@@ -3,18 +3,22 @@
 # Budgets
 > Budgets is a mobile web application that allows you to manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 ----
-_[Here](https://www.loom.com/share/84d48cabe74b451087177d7ca18098a5) is the link to the project presentation video_
+_[Here]() is the link to the project presentation video_
 
 _[Here](https://enigmatic-castle-54328.herokuapp.com/) is the link to the live demo_
 
 ---
-  Splash Screen                                              |  Login Page
+  Splash Screen                                              |  Categories / Home page
 :-----------------------------------------------------------:|:---------------------------------------------------------:
-![screenshot]()         |   ![screenshot]()
-  Transactions Page                                          |  Categories Page
-![screenshot]()     |   ![screenshot]()
+![Splash](https://user-images.githubusercontent.com/35315311/177992921-2b31225f-24fd-4d42-a672-12fd5faceb4c.png)         |   ![Categories](https://user-images.githubusercontent.com/35315311/177993018-2b7eaa15-7f79-46f8-b148-7b3387348879.png)
+  Transactions Page                                          |  Add new Transaction
+![Transactions](https://user-images.githubusercontent.com/35315311/177993154-bd557576-a1f8-4c3a-af6c-2f8452621442.png)     |   ![Create Transaction](https://user-images.githubusercontent.com/35315311/177993279-b2d427db-45c8-4d9f-a64c-1b85334a7790.png)
 
 # Getting Started
+
+
+
+
 
 
 _To get a local copy up and running follow these simple steps._
