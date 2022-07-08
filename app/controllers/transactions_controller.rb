@@ -59,7 +59,7 @@ class TransactionsController < ApplicationController
     # puts plain: params
     @transaction = Transaction.includes.call(:user, :categories).find(params[:id])
     @transaction.destroy
-    flash[:notice] = 'Transaction was successfully destroyed.'
+    flash[:notice] = 'Transaction was successfully deleted.'
     redirect_to category_transactions_path
   end
 
