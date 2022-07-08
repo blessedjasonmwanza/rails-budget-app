@@ -1,0 +1,19 @@
+<section id="<%= dom_id category %>" class="category_card">
+  <%= image_tag category.icon, class: 'icon' %>
+  <div class="details">
+    <span class="top_data">
+      <h2 class="name" title="Category name"><%= category.name%></h2>
+      <span class="total" title="Total transactions"><small>Total Amount: <%= number_to_currency(category.total_amount)%></small></span>
+    </span>
+    <span class="bottom_data">
+      <time data="<%= category.created_at %>"><%= category.created_at.strftime("%e %B %Y") %></time>
+      <% if can? :destroy, category %>
+          <% if request.path != '/' %>
+            <%= button_to 'Detele + Data', category_url(id: category.id), method: :delete,  data: {turbo: false}, class: 'btn' %>
+          <%end%>
+        <% else %>
+        <span></span>
+      <% end %>
+    </span>
+  </div>
+</section>
