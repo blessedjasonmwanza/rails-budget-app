@@ -57,7 +57,7 @@ class TransactionsController < ApplicationController
   # DELETE /transactions/1 or /transactions/1.json
   def destroy
     # puts plain: params
-    @transaction = Transaction.includes.call(:user, :categories).find(params[:id])
+    @transaction = Transaction.find(params[:id])
     @transaction.destroy
     flash[:notice] = 'Transaction was successfully deleted.'
     redirect_to category_transactions_path

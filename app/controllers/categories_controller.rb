@@ -53,7 +53,7 @@ class CategoriesController < ApplicationController
   # DELETE /categories/1 or /categories/1.json
   def destroy
     puts plain: params
-    @category = Category.includes(:user, :transaction).find(params[:id])
+    @category = Category.find(params[:id])
     @category.destroy
     flash[:notice] = 'Category and its data was successfully deleted.'
     redirect_to root_path
