@@ -55,7 +55,7 @@ class CategoriesController < ApplicationController
     puts plain: params
     @category = Category.includes(:user, :transaction).find(params[:id])
     @category.destroy
-    flash[:notice] = 'Category and its data was successfully destroyed.'
+    flash[:notice] = 'Category and its data was successfully deleted.'
     redirect_to root_path
   end
 
